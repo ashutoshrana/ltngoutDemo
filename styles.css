@@ -1,0 +1,38 @@
+body {
+    background-color: #f3f2f2;
+}
+
+.slds-card {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for missing SLDS icons on GitHub Pages */
+.slds-icon_container.slds-icon-standard-case {
+    background-color: #f2cf5b;
+}
+
+.slds-icon_container.slds-icon-utility-success {
+    background-color: transparent;
+}
+
+.slds-button.slds-button_brand {
+    background-color: #0070d2;
+    border-color: #0070d2;
+}
+
+.slds-is-relative {
+    position: relative;
+}
+
+.slds-hide {
+    display: none;
+}
+
+/* Demo banner */
+.demo-banner {
+    background-color: #1589ee;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
