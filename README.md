@@ -1,38 +1,16 @@
-# Salesforce Case Creation Component
+# Historical case-form and Lightning Out experiments
 
-This repository contains a Salesforce Lightning Web Component (LWC) for creating Case records. The component includes:
+This repository is retained as a historical demonstration. It is not a deployable Salesforce DX project.
 
-- A form for creating Case records with standard fields
-- Integration with Salesforce picklist values
-- Success/error notifications
-- Cross-platform support via Lightning Out and Visualforce
+## What is present
 
-## Features
+- [index.html](index.html), [styles.css](styles.css), and [scripts.js](scripts.js): a static case-form mockup. Picklist options are hardcoded. Submitting validates a nonempty subject, displays a success toast, and clears fields. No Case record is created and no Salesforce API is called.
+- [ltng.html](ltng.html): a separate Lightning Out experiment referencing an external Salesforce org and custom components. Their definitions, deployment metadata, authentication, and setup are not included.
 
-- **Dynamic Picklist Values**: Automatically fetches picklist values from Salesforce
-- **Responsive Design**: Works on desktop and mobile devices
-- **Error Handling**: Provides user feedback for errors
-- **Classic Support**: Can be embedded in Salesforce Classic via Visualforce
+## Preview the mockup
 
-## Implementation Details
+From this directory, run `python3 -m http.server 8000 --bind 127.0.0.1` and open [the local preview](http://127.0.0.1:8000/index.html). Stop the server when finished. The stylesheet uses an external CDN; referenced `/assets/icons/...` sprite files are absent, so icons can be missing. This is a visual demonstration, and the toast is simulated success.
 
-The component uses:
-- Lightning Web Components to create the UI
-- Apex controllers for server-side logic
-- Lightning Out for embedding in Visualforce pages
+The repository contains no `force-app/`, Apex, LWC source bundle, Visualforce page, or Salesforce DX configuration. There is no Salesforce deployment command for this tree. The Lightning Out page requires separately supplied and verified org components; its historical endpoint is not a supported service contract.
 
-## Deployment
-
-Deploy this solution to your Salesforce org using Salesforce DX:
-
-```bash
-sfdx force:source:deploy -p force-app/
-```
-
-## Usage
-
-Add the component to any Lightning page through the Lightning App Builder, or access it via the Visualforce page at `/apex/CaseCreationVF`.
-
-## Screenshots
-
-![Case Creation Form](https://example.com/case-creation-screenshot.png)
+Future Salesforce integration would require its own source project, authenticated backend, and a real record-creation test. Existing files remain for reference.
